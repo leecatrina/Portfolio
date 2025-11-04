@@ -1,8 +1,12 @@
 package com.pluralsight.finance;
 
 public class CreditCard extends Account {
-    public CreditCard(String name, String accountNumber, double balance) {
+    public CreditCard(String name, int accountNumber, double balance) {
         super(name, accountNumber, balance);
+    }
+
+    public CreditCard(String name, int accountNumber, int balance) {
+        super();
     }
 
     public  double charge(double amount){

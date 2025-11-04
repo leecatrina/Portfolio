@@ -2,29 +2,30 @@ package com.pluralsight.finance;
 
 import java.util.ArrayList;
 
-public class Portfolio {
+public class Portfolio implements Valuable {
     private String name;
     private String owner;
     private ArrayList<Valuable> assets;
 
-    public Portfolio(String name, String owner, ArrayList<Valuable> assets) {
+    public Portfolio(String name, String owner) {
         this.name = name;
         this.owner = owner;
-        this.assets = assets;
+        this.assets = new ArrayList<>();
     }
-    public void add (Valuable asset){
+    public void add(Valuable asset){
         assets.add(asset);
     }
+
     public double getValue() {
-        //loop through the valuable in arrayList assets
+        //Loop through the Valuables in ArrayList assets
+        // keep a total
         double total = 0;
         for (Valuable valuable: assets) {
+            //add everything up
             total += valuable.getValue();
         }
-        //add everything up keeping a total
         //return the total
-
-        return 0;
-
+        return total;
     }
 }
+
