@@ -13,10 +13,12 @@ public class CheckingAccount extends Account {
     public double deposit(double amount) {
         double newBalance = getBalance() + amount;
         setBalance(newBalance);
+        return newBalance;
     }
 
     public double withdraw(double amount) {
         double newBalance = getBalance() - amount;
         setBalance(newBalance);
+        return newBalance;
     }
 }
